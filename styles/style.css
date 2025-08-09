@@ -1,0 +1,313 @@
+*{
+
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+
+
+
+}
+
+a{
+
+    text-decoration: none;
+    color: aliceblue;
+}
+
+nav ul li a{
+
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+    transition: .5s;
+
+}
+
+nav ul li:hover a,
+nav ul li.active a{
+
+
+    color: #7cf03d;
+}
+
+nav ul li{
+
+    list-style: none;
+    margin-left: 35px;
+}
+
+nav{
+
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    padding: 25px 9%;
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    margin-bottom: 150px;
+
+    visibility: hidden;
+    opacity: 0;
+    animation: animationNav 1.5s linear forwards;
+    animation-delay: 1.2s;
+}
+
+@keyframes animationNav {
+
+    100%{
+
+        visibility: visible;
+        opacity: 1;
+    }
+    
+}
+
+.logo{
+
+    font-size: 1.9rem;
+    font-weight: 800;
+}
+
+nav ul{
+
+display: flex;
+}
+
+.banner{
+
+display: flex;
+gap: 50px;
+align-items: center;
+height: 100vh;
+padding: 60px 9% 0;
+color: aliceblue;
+ visibility: hidden;
+    opacity: 0;
+    animation: animationNav 1.5s linear forwards;
+    animation-delay: 1.6s;
+
+}
+
+.banner-info h1{
+
+font-size: 3.5rem;
+font-weight: 700;
+
+
+}
+
+.banner-info h2 span{
+
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: .7px #7cf03d;
+    animation: spanAnimation 12s linear infinite ;
+    animation-delay: calc(-3s*var(--i));
+}
+
+@keyframes spanAnimation {
+
+    25%,100%{
+
+        display: none;
+    }
+    
+}
+
+
+
+.banner-info h2{
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: -10px;
+    
+}
+
+.banner-info h2 span::before{
+
+
+    content: attr(data-text);
+    position: absolute;
+    width: 0;
+    border-right: 2px solid #7cf03d;
+    color: #7cf03d;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: animationText 4s linear infinite;
+}
+
+@keyframes animationText {
+
+    10%,100%{
+
+        width: 0;
+    }
+
+    70%,90%{
+
+        width: 100%;
+    }
+    
+}
+.banner-info p{
+
+    font-size: 1rem;
+    margin: 10px 0px 25px;
+}
+
+.banner-info .btn-sec{
+
+    display: flex;
+    align-items: center;
+}
+
+.btn{
+
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #7cf03d;
+    border: 2px solid #7cf03d;
+    border-radius: 40px;
+    box-shadow: 0px 0px 10px #7cf03d;
+    font-size: 1rem;
+    color: black;
+    font-weight: 600;
+    transition: .5s;
+}
+
+.btn:hover{
+
+    background: transparent;
+    color: #7cf03d;
+    box-shadow: none;
+}
+
+.sec{
+
+margin: 20px;
+
+}
+
+.sec a{
+
+    display: inline-flex;
+    padding: 8px;
+    border: 2px solid #7cf03d;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    color: #7cf03d;
+    margin: 0px 8px;
+}
+
+.sec a:hover{
+
+    background: #7cf03d;
+    color: black;
+    box-shadow: 0px 0px 10px #7cf03d;
+}
+
+.img-box{
+position: relative;
+width: 32vw;
+height: 32vw;
+
+border-radius: 50%;
+padding: 5px;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+
+
+}
+
+.img-box::before,
+.img-box::after{
+
+    content: '';
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background:conic-gradient(transparent, transparent,transparent,#7cf03d);
+    transform: rotate(0deg);
+    animation: rotateBorder 10s linear infinite;
+}
+
+@keyframes rotateBorder {
+    
+    100%{
+
+        transform: rotate(360deg);
+    }
+}
+
+.img-box::after{
+
+    animation-delay: -5s;
+}
+
+.img-item{
+
+    width: 100%;
+    height: 100%;
+    background: #1f242d;
+    border: 1px solid #1f242d;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.home-info .img-box .img-item img {
+
+
+    position: absolute;
+    display: block;
+    width: 85%;
+    object-fit: cover;
+   mix-blend-mode: lighten;
+   
+}
+.bars-animation{
+
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    z-index: -1;
+    
+}
+
+
+
+.bar{
+
+    height: 100%;
+    width: 100%;
+    background-color: #1f242d;
+  
+    transform: translateY(-100%);
+    animation: showBars 0.5s ease-in-out forwards;
+    animation-delay: calc(0.1s* var(--i));
+}
+
+@keyframes showBars {
+
+    100%{
+transform: translateY(0%);
+
+    }
+    
+}
