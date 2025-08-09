@@ -5,11 +5,7 @@
     box-sizing: border-box;
 }
 
-body{
 
-
-
-}
 
 a{
 
@@ -19,7 +15,7 @@ a{
 
 nav ul li a{
 
-    color: aliceblue;
+    color: rgb(249, 249, 250);
     text-decoration: none;
     font-size: 1.3rem;
     font-weight: 600;
@@ -84,9 +80,11 @@ display: flex;
 .banner{
 
 display: flex;
+
 gap: 50px;
 align-items: center;
 height: 100vh;
+width: 100%;
 padding: 60px 9% 0;
 color: aliceblue;
  visibility: hidden;
@@ -309,5 +307,57 @@ overflow: hidden;
 transform: translateY(0%);
 
     }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+/*-----Responsive------*/
+
+@media screen and (max-width:600px){
+
+nav{
+
+flex-direction: row-reverse;
+padding: 10px 3%;
+margin-bottom: 150;
+background-color: slateblue;
+
+
+}
+
+nav ul{
+
+flex-direction: column;
+}
+
+.banner{
+   
+
+    display: flex;
+flex-direction: column-reverse;
+gap: 0px;
+align-items: center;
+background-size: cover;
+padding: 60px -10% 0;
+}
+
+.sec{
+
+margin: 20px;
+display: grid;
+grid-template-columns: repeat(3,1fr);
+row-gap: 5px;
+
+
+}
     
 }
