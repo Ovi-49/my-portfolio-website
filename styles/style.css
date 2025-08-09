@@ -355,7 +355,7 @@ padding: 60px -10% 0;
 
 margin: 10px;
 display: grid;
-grid-template-columns: repeat(6,1fr);
+grid-template-columns: repeat(4,1fr);
 row-gap: 3px;
 
 
